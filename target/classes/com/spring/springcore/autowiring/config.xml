@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+  
+  <!--  by type  
+   <bean name="employee" class="com.spring.springcore.autowiring.Employee" p:id="10" autowire="byType" />  -->
+   
+  
+ <bean name="address" class="com.spring.springcore.autowiring.Address" p:hno="5000" p:street="abc" p:city="delhi"/>
+ 
+ <!--  duplicate will give error
+ <bean name="address1" class="com.spring.springcore.autowiring.Address" p:hno="1000" p:street="abc" p:city="delhi"/>
+   
+    -->
+    
+    <!-- by name 
+    
+    <bean name="employee" class="com.spring.springcore.autowiring.Employee" p:id="10" autowire="byName" />
+ -->
+ 
+ <!--  by constructor  
+ 
+  <bean name="employee" class="com.spring.springcore.autowiring.Employee" p:id="10" autowire="constructor" />
+  
+  -->
+  
+  <!-- annotation -->
+  
+  <bean name="employee" class="com.spring.springcore.autowiring.Employee" p:id="100"/>
+  
+  <!--  Qualifier  -->
+  
+  <bean name="address2" class="com.spring.springcore.autowiring.Address" p:hno="1000" p:street="abc" p:city="delhi"/>
+  
+</beans>
